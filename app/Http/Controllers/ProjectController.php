@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Project;
 
 class ProjectController extends Controller
 {
@@ -40,10 +41,10 @@ class ProjectController extends Controller
     }])->find($id);
 
     return $project->toJson();
-    }
+  }
 
-    public function markAsCompleted(Project $project)
-    {
+  public function markAsCompleted(Project $project)
+  {
     $project->is_completed = true;
     $project->update();
 
